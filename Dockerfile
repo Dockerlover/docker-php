@@ -6,7 +6,7 @@ MAINTAINER  liuhong1.happy@163.com
 ENV USER_NAME admin
 ENV SERVICE_ID php
 # 安装php和apache
-RUN apt-get -yq install apache2 libapache2-mod-php5 \
+RUN apt-get update && apt-get -y install apache2 libapache2-mod-php5 \
     php5-mysql php5-gd php5-curl php-pear php-apc && \
     rm -rf /var/lib/apt/lists/* && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
